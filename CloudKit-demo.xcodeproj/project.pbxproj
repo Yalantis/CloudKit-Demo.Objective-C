@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AA396AFD1AB02DFE00A8757F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396AFC1AB02DFE00A8757F /* main.m */; };
-		AA396B001AB02DFE00A8757F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396AFF1AB02DFE00A8757F /* AppDelegate.m */; };
-		AA396B031AB02DFE00A8757F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396B021AB02DFE00A8757F /* ViewController.m */; };
-		AA396B061AB02DFE00A8757F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA396B041AB02DFE00A8757F /* Main.storyboard */; };
-		AA396B081AB02DFE00A8757F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA396B071AB02DFE00A8757F /* Images.xcassets */; };
-		AA396B0B1AB02DFE00A8757F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA396B091AB02DFE00A8757F /* LaunchScreen.xib */; };
 		AA396B171AB02DFE00A8757F /* CloudKit_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396B161AB02DFE00A8757F /* CloudKit_demoTests.m */; };
+		AA396B221AB0361F00A8757F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA396B211AB0361F00A8757F /* CloudKit.framework */; };
+		AACCE7751AB70FAA00B27DEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7721AB70FAA00B27DEC /* Images.xcassets */; };
+		AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */; };
+		AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7741AB70FAA00B27DEC /* Main.storyboard */; };
+		AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE77A1AB70FF600B27DEC /* AppDelegate.m */; };
+		AACCE7831AB72A2D00B27DEC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7821AB72A2D00B27DEC /* MainViewController.m */; };
+		AACCE7861AB72A4F00B27DEC /* CloudKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7851AB72A4F00B27DEC /* CloudKitManager.m */; };
+		AACCE78A1AB72D8800B27DEC /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7891AB72D8800B27DEC /* City.m */; };
+		AACCE78F1AB752B400B27DEC /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE78D1AB752B400B27DEC /* CityTableViewCell.m */; };
+		AACCE7901AB752B400B27DEC /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */; };
+		AACCE7941AB7695400B27DEC /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7931AB7695400B27DEC /* DetailedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +36,27 @@
 		AA396AF71AB02DFE00A8757F /* CloudKit-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudKit-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA396AFB1AB02DFE00A8757F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA396AFC1AB02DFE00A8757F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA396AFE1AB02DFE00A8757F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AA396AFF1AB02DFE00A8757F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AA396B011AB02DFE00A8757F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AA396B021AB02DFE00A8757F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AA396B051AB02DFE00A8757F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA396B071AB02DFE00A8757F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AA396B0A1AB02DFE00A8757F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AA396B101AB02DFE00A8757F /* CloudKit-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CloudKit-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA396B151AB02DFE00A8757F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA396B161AB02DFE00A8757F /* CloudKit_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudKit_demoTests.m; sourceTree = "<group>"; };
+		AA396B201AB0360F00A8757F /* CloudKit-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CloudKit-demo.entitlements"; sourceTree = "<group>"; };
+		AA396B211AB0361F00A8757F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AACCE7721AB70FAA00B27DEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		AACCE7741AB70FAA00B27DEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AACCE7791AB70FF600B27DEC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AACCE77A1AB70FF600B27DEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AACCE7811AB72A2D00B27DEC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		AACCE7821AB72A2D00B27DEC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AACCE7841AB72A4F00B27DEC /* CloudKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudKitManager.h; sourceTree = "<group>"; };
+		AACCE7851AB72A4F00B27DEC /* CloudKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudKitManager.m; sourceTree = "<group>"; };
+		AACCE7881AB72D8800B27DEC /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		AACCE7891AB72D8800B27DEC /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		AACCE78C1AB752B400B27DEC /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
+		AACCE78D1AB752B400B27DEC /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
+		AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		AACCE7921AB7695400B27DEC /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		AACCE7931AB7695400B27DEC /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA396B221AB0361F00A8757F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,13 +99,10 @@
 		AA396AF91AB02DFE00A8757F /* CloudKit-demo */ = {
 			isa = PBXGroup;
 			children = (
-				AA396AFE1AB02DFE00A8757F /* AppDelegate.h */,
-				AA396AFF1AB02DFE00A8757F /* AppDelegate.m */,
-				AA396B011AB02DFE00A8757F /* ViewController.h */,
-				AA396B021AB02DFE00A8757F /* ViewController.m */,
-				AA396B041AB02DFE00A8757F /* Main.storyboard */,
-				AA396B071AB02DFE00A8757F /* Images.xcassets */,
-				AA396B091AB02DFE00A8757F /* LaunchScreen.xib */,
+				AACCE7781AB70FF600B27DEC /* Classes */,
+				AACCE76F1AB70F5200B27DEC /* Frameworks */,
+				AA396B201AB0360F00A8757F /* CloudKit-demo.entitlements */,
+				AACCE7711AB70FAA00B27DEC /* Resources */,
 				AA396AFA1AB02DFE00A8757F /* Supporting Files */,
 			);
 			path = "CloudKit-demo";
@@ -117,6 +132,84 @@
 				AA396B151AB02DFE00A8757F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AACCE76F1AB70F5200B27DEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA396B211AB0361F00A8757F /* CloudKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AACCE7711AB70FAA00B27DEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE7721AB70FAA00B27DEC /* Images.xcassets */,
+				AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */,
+				AACCE7741AB70FAA00B27DEC /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AACCE7781AB70FF600B27DEC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE78B1AB750A400B27DEC /* Views */,
+				AACCE7871AB72D7800B27DEC /* Models */,
+				AACCE77F1AB72A2D00B27DEC /* Managers */,
+				AACCE7801AB72A2D00B27DEC /* ViewControllers */,
+				AACCE7791AB70FF600B27DEC /* AppDelegate.h */,
+				AACCE77A1AB70FF600B27DEC /* AppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AACCE77F1AB72A2D00B27DEC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE7841AB72A4F00B27DEC /* CloudKitManager.h */,
+				AACCE7851AB72A4F00B27DEC /* CloudKitManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AACCE7801AB72A2D00B27DEC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE7911AB7692D00B27DEC /* DetailedViewController */,
+				AACCE7811AB72A2D00B27DEC /* MainViewController.h */,
+				AACCE7821AB72A2D00B27DEC /* MainViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AACCE7871AB72D7800B27DEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE7881AB72D8800B27DEC /* City.h */,
+				AACCE7891AB72D8800B27DEC /* City.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AACCE78B1AB750A400B27DEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE78C1AB752B400B27DEC /* CityTableViewCell.h */,
+				AACCE78D1AB752B400B27DEC /* CityTableViewCell.m */,
+				AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AACCE7911AB7692D00B27DEC /* DetailedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AACCE7921AB7695400B27DEC /* DetailedViewController.h */,
+				AACCE7931AB7695400B27DEC /* DetailedViewController.m */,
+			);
+			path = DetailedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +261,12 @@
 				TargetAttributes = {
 					AA396AF61AB02DFE00A8757F = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = R7JGNRV2SS;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					AA396B0F1AB02DFE00A8757F = {
 						CreatedOnToolsVersion = 6.2;
@@ -199,9 +298,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA396B061AB02DFE00A8757F /* Main.storyboard in Resources */,
-				AA396B0B1AB02DFE00A8757F /* LaunchScreen.xib in Resources */,
-				AA396B081AB02DFE00A8757F /* Images.xcassets in Resources */,
+				AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */,
+				AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */,
+				AACCE7901AB752B400B27DEC /* CityTableViewCell.xib in Resources */,
+				AACCE7751AB70FAA00B27DEC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA396B031AB02DFE00A8757F /* ViewController.m in Sources */,
-				AA396B001AB02DFE00A8757F /* AppDelegate.m in Sources */,
+				AACCE78A1AB72D8800B27DEC /* City.m in Sources */,
+				AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */,
+				AACCE7941AB7695400B27DEC /* DetailedViewController.m in Sources */,
+				AACCE78F1AB752B400B27DEC /* CityTableViewCell.m in Sources */,
+				AACCE7831AB72A2D00B27DEC /* MainViewController.m in Sources */,
+				AACCE7861AB72A4F00B27DEC /* CloudKitManager.m in Sources */,
 				AA396AFD1AB02DFE00A8757F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,25 +346,6 @@
 			targetProxy = AA396B111AB02DFE00A8757F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AA396B041AB02DFE00A8757F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA396B051AB02DFE00A8757F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AA396B091AB02DFE00A8757F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA396B0A1AB02DFE00A8757F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AA396B181AB02DFE00A8757F /* Debug */ = {
@@ -343,9 +428,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "CloudKit-demo/CloudKit-demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CloudKit-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -353,9 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "CloudKit-demo/CloudKit-demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CloudKit-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -412,6 +507,7 @@
 				AA396B1C1AB02DFE00A8757F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA396B1D1AB02DFE00A8757F /* Build configuration list for PBXNativeTarget "CloudKit-demoTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +516,7 @@
 				AA396B1F1AB02DFE00A8757F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
