@@ -10,6 +10,7 @@
 #import "CloudKitManager.h"
 #import "CityTableViewCell.h"
 #import "DetailedViewController.h"
+#import "SelectCityViewController.h"
 
 static NSString * const kShowDetailSegueId = @"showDetailSegueId";
 
@@ -33,16 +34,17 @@ UITableViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self updateData];
 }
 
 #pragma mark - Segue methods
 
 - (IBAction)unwindToMainViewController:(UIStoryboardSegue *)segue {
+    
+    SelectCityViewController *selectCityVC = (SelectCityViewController *)[segue sourceViewController];
+    City *newCity = selectCityVC.selectedCity;
+    [self addCity:newCity];
+    
     [self.navigationController popToViewController:self animated:YES];
 }
 
@@ -79,6 +81,14 @@ UITableViewDelegate
                                           cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                           otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)addCity:(City *)city {
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.cities];
+    [temp insertObject:city atIndex:0];
+    self.cities = temp;
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Segue methods

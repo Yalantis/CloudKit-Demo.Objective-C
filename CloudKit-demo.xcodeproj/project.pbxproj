@@ -10,7 +10,7 @@
 		AA18E3121AB989C900366168 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA18E3111AB989C900366168 /* Cities.plist */; };
 		AA18E31A1AB9C8AA00366168 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E3151AB9C8AA00366168 /* DetailedViewController.m */; };
 		AA18E31B1AB9C8AA00366168 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E3181AB9C8AA00366168 /* MainViewController.m */; };
-		AA18E31E1AB9C94D00366168 /* SelectCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */; };
+		AA18E31E1AB9C94D00366168 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E31D1AB9C94D00366168 /* SelectCityViewController.m */; };
 		AA396AFD1AB02DFE00A8757F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396AFC1AB02DFE00A8757F /* main.m */; };
 		AA396B171AB02DFE00A8757F /* CloudKit_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396B161AB02DFE00A8757F /* CloudKit_demoTests.m */; };
 		AA50808E1ABAE294005F05AC /* Dubai.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5080891ABAE294005F05AC /* Dubai.png */; };
@@ -45,8 +45,8 @@
 		AA18E3151AB9C8AA00366168 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 		AA18E3171AB9C8AA00366168 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AA18E3181AB9C8AA00366168 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		AA18E31C1AB9C94D00366168 /* SelectCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCitiesViewController.h; sourceTree = "<group>"; };
-		AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCitiesViewController.m; sourceTree = "<group>"; };
+		AA18E31C1AB9C94D00366168 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
+		AA18E31D1AB9C94D00366168 /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
 		AA396AF71AB02DFE00A8757F /* CloudKit-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudKit-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA396AFB1AB02DFE00A8757F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA396AFC1AB02DFE00A8757F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		AA18E3191AB9C8AA00366168 /* SelectCities */ = {
 			isa = PBXGroup;
 			children = (
-				AA18E31C1AB9C94D00366168 /* SelectCitiesViewController.h */,
-				AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */,
+				AA18E31C1AB9C94D00366168 /* SelectCityViewController.h */,
+				AA18E31D1AB9C94D00366168 /* SelectCityViewController.m */,
 			);
 			path = SelectCities;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				AA18E31B1AB9C8AA00366168 /* MainViewController.m in Sources */,
 				AA18E31A1AB9C8AA00366168 /* DetailedViewController.m in Sources */,
 				AA396AFD1AB02DFE00A8757F /* main.m in Sources */,
-				AA18E31E1AB9C94D00366168 /* SelectCitiesViewController.m in Sources */,
+				AA18E31E1AB9C94D00366168 /* SelectCityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

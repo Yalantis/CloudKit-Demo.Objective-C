@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "City.h"
 
-@interface SelectCitiesViewController : UIViewController
+@interface SelectCityViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *selectedCities;
+@property (nonatomic, strong) City *selectedCity;
 
 @end

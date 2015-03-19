@@ -64,7 +64,7 @@
         <!--Select Cities-->
         <scene sceneID="7Mk-1d-SIe">
             <objects>
-                <viewController id="yBg-dl-09i" customClass="SelectCitiesViewController" sceneMemberID="viewController">
+                <viewController id="yBg-dl-09i" customClass="SelectCityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CPj-GD-rp0"/>
                         <viewControllerLayoutGuide type="bottom" id="XS9-GZ-TfI"/>
@@ -76,6 +76,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZQi-Ku-CiY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Sgo-8Z-utF">
+                                    <rect key="frame" x="0.0" y="130" width="320" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectCitiesCellReuseId" id="EZZ-uY-k2p">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -90,6 +95,14 @@
                                     <outlet property="delegate" destination="yBg-dl-09i" id="aBg-Kg-4MU"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yA9-ok-AS9">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="5UB-qq-Xx0"/>
+                                    <constraint firstAttribute="height" constant="37" id="zQR-At-h4Q"/>
+                                </constraints>
+                                <color key="color" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,6 +110,8 @@
                             <constraint firstItem="ZQi-Ku-CiY" firstAttribute="leading" secondItem="G6r-Ua-Zot" secondAttribute="leading" id="9mI-aR-BPh"/>
                             <constraint firstAttribute="trailing" secondItem="ZQi-Ku-CiY" secondAttribute="trailing" id="T26-Qj-Y0w"/>
                             <constraint firstItem="ZQi-Ku-CiY" firstAttribute="top" secondItem="G6r-Ua-Zot" secondAttribute="top" id="Y84-eI-eJp"/>
+                            <constraint firstAttribute="centerY" secondItem="yA9-ok-AS9" secondAttribute="centerY" id="k9V-Wb-hJU"/>
+                            <constraint firstAttribute="centerX" secondItem="yA9-ok-AS9" secondAttribute="centerX" id="yZc-K3-k3I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Cities" id="fRd-Wl-Apm">
@@ -108,6 +123,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="indicatorView" destination="yA9-ok-AS9" id="AZ2-aT-Wjo"/>
                         <outlet property="tableView" destination="ZQi-Ku-CiY" id="uZx-Id-XbD"/>
                         <segue destination="LN5-QD-DsI" kind="unwind" identifier="unwindToMainId" unwindAction="unwindToMainViewController:" id="RuR-Q6-mju"/>
                     </connections>
