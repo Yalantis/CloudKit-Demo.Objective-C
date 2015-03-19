@@ -44,7 +44,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cities" id="2nF-lf-qXH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SWT-kJ-DEw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SWT-kJ-DEw">
+                            <connections>
+                                <segue destination="yBg-dl-09i" kind="show" id="UaX-YK-qDV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -56,6 +60,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="989" y="142"/>
+        </scene>
+        <!--Select Cities-->
+        <scene sceneID="7Mk-1d-SIe">
+            <objects>
+                <viewController id="yBg-dl-09i" customClass="SelectCitiesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CPj-GD-rp0"/>
+                        <viewControllerLayoutGuide type="bottom" id="XS9-GZ-TfI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6r-Ua-Zot">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZQi-Ku-CiY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectCitiesCellReuseId" id="EZZ-uY-k2p">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZZ-uY-k2p" id="O2n-Ae-WUm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yBg-dl-09i" id="p1v-sX-ihE"/>
+                                    <outlet property="delegate" destination="yBg-dl-09i" id="aBg-Kg-4MU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XS9-GZ-TfI" firstAttribute="top" secondItem="ZQi-Ku-CiY" secondAttribute="bottom" id="8PL-6x-fb0"/>
+                            <constraint firstItem="ZQi-Ku-CiY" firstAttribute="leading" secondItem="G6r-Ua-Zot" secondAttribute="leading" id="9mI-aR-BPh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZQi-Ku-CiY" secondAttribute="trailing" id="T26-Qj-Y0w"/>
+                            <constraint firstItem="ZQi-Ku-CiY" firstAttribute="top" secondItem="G6r-Ua-Zot" secondAttribute="top" id="Y84-eI-eJp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Cities" id="fRd-Wl-Apm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QRS-oY-yFn">
+                            <connections>
+                                <action selector="doneButtonDidPress:" destination="yBg-dl-09i" id="mOa-u0-pNB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZQi-Ku-CiY" id="uZx-Id-XbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgB-X1-KeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1475" y="-554"/>
         </scene>
         <!--City info-->
         <scene sceneID="boC-rb-2ek">

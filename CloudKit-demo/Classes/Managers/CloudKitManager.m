@@ -9,31 +9,60 @@
 #import "CloudKitManager.h"
 #import <CloudKit/CloudKit.h>
 #import "City.h"
+#import <UIKit/UIKit.h>
 
-NSString * const kContainerId = @"iCloud.com.yalantis.cloudkit-demo";
+NSString * const kContainerId = @"iCloud.com.yalantis.cloudkit-demo"; //@"iCloud.Yalantis.CloudKitDemo";
 NSString * const kCitiesRecord = @"Cities";
 
 @implementation CloudKitManager
 
 #pragma mark - Class methods
 
++ (CKDatabase *)publicCloudDatabase {
+    return [[CKContainer containerWithIdentifier:kContainerId] publicCloudDatabase];
+}
+
 + (void)fetchAllCitiesWithCompletionHandler:(CloudKitCompletionHandler)handler {
-    
-    CKDatabase *publicDatabase = [[CKContainer containerWithIdentifier:kContainerId] publicCloudDatabase];
     
     NSPredicate *predicate = [NSPredicate predicateWithValue:YES];
     CKQuery *query = [[CKQuery alloc] initWithRecordType:kCitiesRecord predicate:predicate];
     
-    [publicDatabase performQuery:query
-                    inZoneWithID:nil
-               completionHandler:^(NSArray *results, NSError *error) {
+    [[self publicCloudDatabase] performQuery:query
+                                inZoneWithID:nil
+                           completionHandler:^(NSArray *results, NSError *error) {
         
-        if (!handler) return;
+                               if (!handler) return;
+                               
+                               if (error) {
+                                   handler (nil, error);
+                               } else {
+                                   handler ([self mapCities:results], error);
+                               }
+    }];
+}
+
++ (void)createRecords:(NSArray *)records {
+    
+    NSDictionary *dataDic = [records lastObject];
+
+    CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord];
+    
+    [[dataDic allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
         
-        if (error) {
-            handler (nil, error);
+        if ([key isEqualToString:CloudKitCityFields.picture]) {
+            NSString *path = [[NSBundle mainBundle] pathForResource:dataDic[key] ofType:@"png"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            record[key] = data;
         } else {
-            handler ([self mapCities:results], error);
+            record[key] = dataDic[key];
+        }
+    }];
+    
+    [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+        if(error) {
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"Saved successfully");
         }
     }];
 }

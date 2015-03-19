@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D7248C8A-37DC-4B1D-9978-0AEEA797DB82</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CloudKit-demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DB25399CCE3FFC59F55AA966886677A79D987C7F</key>
+		<string>git.yalantis.com:maksim.usenko/cloudkit-demo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CloudKit-demo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DB25399CCE3FFC59F55AA966886677A79D987C7F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git.yalantis.com:maksim.usenko/cloudkit-demo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DB25399CCE3FFC59F55AA966886677A79D987C7F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DB25399CCE3FFC59F55AA966886677A79D987C7F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CloudKit-demo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

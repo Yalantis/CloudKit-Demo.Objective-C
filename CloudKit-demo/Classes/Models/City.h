@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 extern const struct CloudKitCityFields {
     __unsafe_unretained NSString *identifier;
@@ -20,7 +21,10 @@ extern const struct CloudKitCityFields {
 @property (nonatomic, copy, readonly) NSString *identifier;
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *text;
-@property (nonatomic, copy, readonly) NSString *imageURL;
+//@property (nonatomic, copy, readonly) NSString *imageURL;
+@property (nonatomic, strong) UIImage *image;
+
++ (NSDictionary *)defaultContent;
 
 - (instancetype)initWithInputData:(id)inputData;
 

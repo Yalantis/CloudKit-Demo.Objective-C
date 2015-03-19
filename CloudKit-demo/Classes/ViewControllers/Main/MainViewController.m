@@ -32,22 +32,12 @@ UITableViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self updateData];
-    
-//    CKRecord *postRecrod = [[CKRecord alloc] initWithRecordType:@"NewRecordType"];
-//    
-//    postRecrod[@"postText"] = @"Sample point of interest";
-//    postRecrod[@"postTitle"] = @"My favorite point of interest";
-//    
-//    [publicDatabase saveRecord:postRecrod completionHandler:^(CKRecord *record, NSError *error) {
-//        if(error) {
-//            NSLog(@"%@", error);
-//        } else {
-//            NSLog(@"Saved successfully");
-//        }
-//    }];
 }
 
 #pragma mark - Private
@@ -62,7 +52,7 @@ UITableViewDelegate
     __weak typeof(self) weakSelf = self;
     [CloudKitManager fetchAllCitiesWithCompletionHandler:^(NSArray *results, NSError *error) {
         if (error) {
-            NSAssert(NO, @"error");
+//            NSAssert(NO, @"error");
         } else {
             weakSelf.cities = results;
             [weakSelf.indicatorView stopAnimating];

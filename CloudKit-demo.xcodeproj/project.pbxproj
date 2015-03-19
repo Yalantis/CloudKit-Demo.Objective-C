@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA18E3121AB989C900366168 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA18E3111AB989C900366168 /* Cities.plist */; };
+		AA18E31A1AB9C8AA00366168 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E3151AB9C8AA00366168 /* DetailedViewController.m */; };
+		AA18E31B1AB9C8AA00366168 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E3181AB9C8AA00366168 /* MainViewController.m */; };
+		AA18E31E1AB9C94D00366168 /* SelectCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */; };
 		AA396AFD1AB02DFE00A8757F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396AFC1AB02DFE00A8757F /* main.m */; };
 		AA396B171AB02DFE00A8757F /* CloudKit_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA396B161AB02DFE00A8757F /* CloudKit_demoTests.m */; };
-		AA396B221AB0361F00A8757F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA396B211AB0361F00A8757F /* CloudKit.framework */; };
-		AACCE7751AB70FAA00B27DEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7721AB70FAA00B27DEC /* Images.xcassets */; };
+		AA50808E1ABAE294005F05AC /* Dubai.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5080891ABAE294005F05AC /* Dubai.png */; };
+		AA50808F1ABAE294005F05AC /* London.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808A1ABAE294005F05AC /* London.png */; };
+		AA5080901ABAE294005F05AC /* NewYork.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808B1ABAE294005F05AC /* NewYork.png */; };
+		AA5080911ABAE294005F05AC /* SanFrancisco.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808C1ABAE294005F05AC /* SanFrancisco.png */; };
+		AA5080921ABAE294005F05AC /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808D1ABAE294005F05AC /* Singapore.png */; };
+		AA60520E1AB9FC4300130577 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA60520D1AB9FC4300130577 /* CloudKit.framework */; };
 		AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */; };
 		AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7741AB70FAA00B27DEC /* Main.storyboard */; };
 		AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE77A1AB70FF600B27DEC /* AppDelegate.m */; };
-		AACCE7831AB72A2D00B27DEC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7821AB72A2D00B27DEC /* MainViewController.m */; };
 		AACCE7861AB72A4F00B27DEC /* CloudKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7851AB72A4F00B27DEC /* CloudKitManager.m */; };
 		AACCE78A1AB72D8800B27DEC /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7891AB72D8800B27DEC /* City.m */; };
 		AACCE78F1AB752B400B27DEC /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE78D1AB752B400B27DEC /* CityTableViewCell.m */; };
 		AACCE7901AB752B400B27DEC /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */; };
-		AACCE7941AB7695400B27DEC /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE7931AB7695400B27DEC /* DetailedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA18E3111AB989C900366168 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		AA18E3141AB9C8AA00366168 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		AA18E3151AB9C8AA00366168 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
+		AA18E3171AB9C8AA00366168 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		AA18E3181AB9C8AA00366168 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AA18E31C1AB9C94D00366168 /* SelectCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCitiesViewController.h; sourceTree = "<group>"; };
+		AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCitiesViewController.m; sourceTree = "<group>"; };
 		AA396AF71AB02DFE00A8757F /* CloudKit-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudKit-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA396AFB1AB02DFE00A8757F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA396AFC1AB02DFE00A8757F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,14 +53,16 @@
 		AA396B151AB02DFE00A8757F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA396B161AB02DFE00A8757F /* CloudKit_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudKit_demoTests.m; sourceTree = "<group>"; };
 		AA396B201AB0360F00A8757F /* CloudKit-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CloudKit-demo.entitlements"; sourceTree = "<group>"; };
-		AA396B211AB0361F00A8757F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		AACCE7721AB70FAA00B27DEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA5080891ABAE294005F05AC /* Dubai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dubai.png; sourceTree = "<group>"; };
+		AA50808A1ABAE294005F05AC /* London.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = London.png; sourceTree = "<group>"; };
+		AA50808B1ABAE294005F05AC /* NewYork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewYork.png; sourceTree = "<group>"; };
+		AA50808C1ABAE294005F05AC /* SanFrancisco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SanFrancisco.png; sourceTree = "<group>"; };
+		AA50808D1ABAE294005F05AC /* Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Singapore.png; sourceTree = "<group>"; };
+		AA60520D1AB9FC4300130577 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		AACCE7741AB70FAA00B27DEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AACCE7791AB70FF600B27DEC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AACCE77A1AB70FF600B27DEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AACCE7811AB72A2D00B27DEC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		AACCE7821AB72A2D00B27DEC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		AACCE7841AB72A4F00B27DEC /* CloudKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudKitManager.h; sourceTree = "<group>"; };
 		AACCE7851AB72A4F00B27DEC /* CloudKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudKitManager.m; sourceTree = "<group>"; };
 		AACCE7881AB72D8800B27DEC /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
@@ -55,8 +70,6 @@
 		AACCE78C1AB752B400B27DEC /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
 		AACCE78D1AB752B400B27DEC /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
 		AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
-		AACCE7921AB7695400B27DEC /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
-		AACCE7931AB7695400B27DEC /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA396B221AB0361F00A8757F /* CloudKit.framework in Frameworks */,
+				AA60520E1AB9FC4300130577 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +91,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA18E3131AB9C8AA00366168 /* Detailed */ = {
+			isa = PBXGroup;
+			children = (
+				AA18E3141AB9C8AA00366168 /* DetailedViewController.h */,
+				AA18E3151AB9C8AA00366168 /* DetailedViewController.m */,
+			);
+			path = Detailed;
+			sourceTree = "<group>";
+		};
+		AA18E3161AB9C8AA00366168 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AA18E3171AB9C8AA00366168 /* MainViewController.h */,
+				AA18E3181AB9C8AA00366168 /* MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AA18E3191AB9C8AA00366168 /* SelectCities */ = {
+			isa = PBXGroup;
+			children = (
+				AA18E31C1AB9C94D00366168 /* SelectCitiesViewController.h */,
+				AA18E31D1AB9C94D00366168 /* SelectCitiesViewController.m */,
+			);
+			path = SelectCities;
+			sourceTree = "<group>";
+		};
 		AA396AEE1AB02DFE00A8757F = {
 			isa = PBXGroup;
 			children = (
+				AA60520D1AB9FC4300130577 /* CloudKit.framework */,
 				AA396AF91AB02DFE00A8757F /* CloudKit-demo */,
 				AA396B131AB02DFE00A8757F /* CloudKit-demoTests */,
 				AA396AF81AB02DFE00A8757F /* Products */,
@@ -134,10 +175,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AA5080881ABAE294005F05AC /* CitiesImages */ = {
+			isa = PBXGroup;
+			children = (
+				AA5080891ABAE294005F05AC /* Dubai.png */,
+				AA50808A1ABAE294005F05AC /* London.png */,
+				AA50808B1ABAE294005F05AC /* NewYork.png */,
+				AA50808C1ABAE294005F05AC /* SanFrancisco.png */,
+				AA50808D1ABAE294005F05AC /* Singapore.png */,
+			);
+			path = CitiesImages;
+			sourceTree = "<group>";
+		};
 		AACCE76F1AB70F5200B27DEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA396B211AB0361F00A8757F /* CloudKit.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -145,9 +197,10 @@
 		AACCE7711AB70FAA00B27DEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AACCE7721AB70FAA00B27DEC /* Images.xcassets */,
+				AA5080881ABAE294005F05AC /* CitiesImages */,
 				AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */,
 				AACCE7741AB70FAA00B27DEC /* Main.storyboard */,
+				AA18E3111AB989C900366168 /* Cities.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -177,9 +230,9 @@
 		AACCE7801AB72A2D00B27DEC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AACCE7911AB7692D00B27DEC /* DetailedViewController */,
-				AACCE7811AB72A2D00B27DEC /* MainViewController.h */,
-				AACCE7821AB72A2D00B27DEC /* MainViewController.m */,
+				AA18E3131AB9C8AA00366168 /* Detailed */,
+				AA18E3161AB9C8AA00366168 /* Main */,
+				AA18E3191AB9C8AA00366168 /* SelectCities */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,15 +254,6 @@
 				AACCE78E1AB752B400B27DEC /* CityTableViewCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		AACCE7911AB7692D00B27DEC /* DetailedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AACCE7921AB7695400B27DEC /* DetailedViewController.h */,
-				AACCE7931AB7695400B27DEC /* DetailedViewController.m */,
-			);
-			path = DetailedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +342,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA50808F1ABAE294005F05AC /* London.png in Resources */,
 				AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */,
+				AA5080921ABAE294005F05AC /* Singapore.png in Resources */,
 				AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */,
+				AA18E3121AB989C900366168 /* Cities.plist in Resources */,
 				AACCE7901AB752B400B27DEC /* CityTableViewCell.xib in Resources */,
-				AACCE7751AB70FAA00B27DEC /* Images.xcassets in Resources */,
+				AA5080901ABAE294005F05AC /* NewYork.png in Resources */,
+				AA50808E1ABAE294005F05AC /* Dubai.png in Resources */,
+				AA5080911ABAE294005F05AC /* SanFrancisco.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,11 +370,12 @@
 			files = (
 				AACCE78A1AB72D8800B27DEC /* City.m in Sources */,
 				AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */,
-				AACCE7941AB7695400B27DEC /* DetailedViewController.m in Sources */,
 				AACCE78F1AB752B400B27DEC /* CityTableViewCell.m in Sources */,
-				AACCE7831AB72A2D00B27DEC /* MainViewController.m in Sources */,
 				AACCE7861AB72A4F00B27DEC /* CloudKitManager.m in Sources */,
+				AA18E31B1AB9C8AA00366168 /* MainViewController.m in Sources */,
+				AA18E31A1AB9C8AA00366168 /* DetailedViewController.m in Sources */,
 				AA396AFD1AB02DFE00A8757F /* main.m in Sources */,
+				AA18E31E1AB9C94D00366168 /* SelectCitiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

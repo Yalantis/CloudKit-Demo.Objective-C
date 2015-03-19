@@ -39,7 +39,7 @@ static NSString * const kCityCellReuseId = @"CityTableViewCellReuseId";
 
 - (void)setCity:(City *)city {
     self.nameLable.text = city.name;
-    self.pictureImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:city.imageURL]]];
+    self.pictureImageView.image = city.image;
 }
 
 @end

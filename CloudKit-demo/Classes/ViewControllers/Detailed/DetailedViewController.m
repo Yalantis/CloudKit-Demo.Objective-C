@@ -46,7 +46,7 @@
 #pragma mark - Private
 
 - (void)setupView {
-    self.cityImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.city.imageURL]]];
+    self.cityImageView.image = self.city.image;
     self.nameLabel.text = self.city.name;
     self.descriptionTextView.text = self.city.text;
 }
