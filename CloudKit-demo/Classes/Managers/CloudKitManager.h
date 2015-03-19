@@ -13,6 +13,6 @@ typedef void(^CloudKitCompletionHandler)(NSArray *results, NSError *error);
 @interface CloudKitManager : NSObject
 
 + (void)fetchAllCitiesWithCompletionHandler:(CloudKitCompletionHandler)handler;
-+ (void)createRecords:(NSArray *)records;
++ (void)createRecords:(NSDictionary *)recordDic completionHandler:(CloudKitCompletionHandler)handler;
 
 @end

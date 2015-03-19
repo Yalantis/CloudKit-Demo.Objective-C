@@ -11,7 +11,7 @@
 #import "City.h"
 #import <UIKit/UIKit.h>
 
-NSString * const kContainerId = @"iCloud.com.yalantis.cloudkit-demo"; //@"iCloud.Yalantis.CloudKitDemo";
+NSString * const kContainerId = @"iCloud.com.yalantis.cloudkit-demo";
 NSString * const kCitiesRecord = @"Cities";
 
 @implementation CloudKitManager
@@ -41,28 +41,29 @@ NSString * const kCitiesRecord = @"Cities";
     }];
 }
 
-+ (void)createRecords:(NSArray *)records {
++ (void)createRecords:(NSDictionary *)recordDic completionHandler:(CloudKitCompletionHandler)handler {
     
-    NSDictionary *dataDic = [records lastObject];
-
     CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord];
-    
-    [[dataDic allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+
+    [[recordDic allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
         
         if ([key isEqualToString:CloudKitCityFields.picture]) {
-            NSString *path = [[NSBundle mainBundle] pathForResource:dataDic[key] ofType:@"png"];
+            NSString *path = [[NSBundle mainBundle] pathForResource:recordDic[key] ofType:@"png"];
             NSData *data = [NSData dataWithContentsOfFile:path];
             record[key] = data;
         } else {
-            record[key] = dataDic[key];
+            record[key] = recordDic[key];
         }
     }];
     
     [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+        
+        if (!handler) return;
+        
         if(error) {
-            NSLog(@"%@", error);
+            handler (nil, error);
         } else {
-            NSLog(@"Saved successfully");
+            handler (@[record], error);
         }
     }];
 }

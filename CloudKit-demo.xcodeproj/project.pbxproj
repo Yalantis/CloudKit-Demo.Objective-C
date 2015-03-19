@@ -18,6 +18,7 @@
 		AA5080901ABAE294005F05AC /* NewYork.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808B1ABAE294005F05AC /* NewYork.png */; };
 		AA5080911ABAE294005F05AC /* SanFrancisco.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808C1ABAE294005F05AC /* SanFrancisco.png */; };
 		AA5080921ABAE294005F05AC /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808D1ABAE294005F05AC /* Singapore.png */; };
+		AA59A0AF1ABAE66700FAACB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA59A0AE1ABAE66700FAACB5 /* Images.xcassets */; };
 		AA60520E1AB9FC4300130577 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA60520D1AB9FC4300130577 /* CloudKit.framework */; };
 		AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */; };
 		AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7741AB70FAA00B27DEC /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		AA50808B1ABAE294005F05AC /* NewYork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewYork.png; sourceTree = "<group>"; };
 		AA50808C1ABAE294005F05AC /* SanFrancisco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SanFrancisco.png; sourceTree = "<group>"; };
 		AA50808D1ABAE294005F05AC /* Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Singapore.png; sourceTree = "<group>"; };
+		AA59A0AE1ABAE66700FAACB5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA60520D1AB9FC4300130577 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		AACCE7741AB70FAA00B27DEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -121,7 +123,6 @@
 		AA396AEE1AB02DFE00A8757F = {
 			isa = PBXGroup;
 			children = (
-				AA60520D1AB9FC4300130577 /* CloudKit.framework */,
 				AA396AF91AB02DFE00A8757F /* CloudKit-demo */,
 				AA396B131AB02DFE00A8757F /* CloudKit-demoTests */,
 				AA396AF81AB02DFE00A8757F /* Products */,
@@ -190,6 +191,7 @@
 		AACCE76F1AB70F5200B27DEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA60520D1AB9FC4300130577 /* CloudKit.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +199,7 @@
 		AACCE7711AB70FAA00B27DEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AA59A0AE1ABAE66700FAACB5 /* Images.xcassets */,
 				AA5080881ABAE294005F05AC /* CitiesImages */,
 				AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */,
 				AACCE7741AB70FAA00B27DEC /* Main.storyboard */,
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA50808F1ABAE294005F05AC /* London.png in Resources */,
+				AA59A0AF1ABAE66700FAACB5 /* Images.xcassets in Resources */,
 				AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */,
 				AA5080921ABAE294005F05AC /* Singapore.png in Resources */,
 				AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */,

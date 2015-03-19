@@ -40,6 +40,12 @@ UITableViewDelegate
     [self updateData];
 }
 
+#pragma mark - Segue methods
+
+- (IBAction)unwindToMainViewController:(UIStoryboardSegue *)segue {
+    [self.navigationController popToViewController:self animated:YES];
+}
+
 #pragma mark - Private
 
 - (void)setupView {
@@ -51,14 +57,28 @@ UITableViewDelegate
     [self.indicatorView startAnimating];
     __weak typeof(self) weakSelf = self;
     [CloudKitManager fetchAllCitiesWithCompletionHandler:^(NSArray *results, NSError *error) {
+        __strong typeof(self) strongSelf = weakSelf;
+        [strongSelf.indicatorView stopAnimating];
         if (error) {
-//            NSAssert(NO, @"error");
+            if (error.code == 6) {
+                [strongSelf presentErrorMessage:NSLocalizedString(@"Add Cities from the default list", nil)];
+            } else {
+                [strongSelf presentErrorMessage:error.userInfo[NSLocalizedDescriptionKey]];
+            }
         } else {
-            weakSelf.cities = results;
-            [weakSelf.indicatorView stopAnimating];
-            [weakSelf.tableView reloadData];
+            strongSelf.cities = results;
+            [strongSelf.tableView reloadData];
         }
     }];
+}
+
+- (void)presentErrorMessage:(NSString *)errorMsg {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CloudKit Error", nil)
+                                                    message:errorMsg
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 #pragma mark - Segue methods

@@ -10,4 +10,6 @@
 
 @interface SelectCitiesViewController : UIViewController
 
+@property (nonatomic, strong) NSArray *selectedCities;
+
 @end

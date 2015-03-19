@@ -73,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZQi-Ku-CiY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZQi-Ku-CiY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -100,18 +100,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Cities" id="fRd-Wl-Apm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QRS-oY-yFn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DhN-0A-LO8">
                             <connections>
-                                <action selector="doneButtonDidPress:" destination="yBg-dl-09i" id="mOa-u0-pNB"/>
+                                <action selector="doneButtonDidPress:" destination="yBg-dl-09i" id="JN0-2j-ujr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="ZQi-Ku-CiY" id="uZx-Id-XbD"/>
+                        <segue destination="LN5-QD-DsI" kind="unwind" identifier="unwindToMainId" unwindAction="unwindToMainViewController:" id="RuR-Q6-mju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgB-X1-KeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LN5-QD-DsI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1475" y="-554"/>
         </scene>

@@ -9,6 +9,8 @@
 #import "City.h"
 #import <CloudKit/CloudKit.h>
 
+static NSString * const kCitiesPlistName = @"Cities";
+
 const struct CloudKitCityFields CloudKitCityFields = {
     .identifier = @"id",
     .name = @"name",
@@ -22,26 +24,24 @@ const struct CloudKitCityFields CloudKitCityFields = {
 
 + (NSDictionary *)defaultContent {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"plist"];
-    
+    NSString *path = [[NSBundle mainBundle] pathForResource:kCitiesPlistName ofType:@"plist"];
     NSData *plistData = [NSData dataWithContentsOfFile:path];
-    if (!plistData)
-    {
-        NSLog(@"error reading from file: ");
-        return nil;
-    }
+    
+    NSAssert(plistData, @"error reading from file: ");
+    
     NSPropertyListFormat format;
     NSError *error = nil;
-    NSDictionary *plist = [NSPropertyListSerialization propertyListWithData:plistData options:NSPropertyListMutableContainersAndLeaves format:&format error:&error];
+    NSDictionary *plistDic = [NSPropertyListSerialization propertyListWithData:plistData
+                                                                    options:NSPropertyListMutableContainersAndLeaves
+                                                                     format:&format
+                                                                      error:&error];
     
-    if (error) {
-        return nil;
-    }
+    NSAssert(!error, @"Can not read data from the plist");
     
-    return plist;
+    return plistDic;
 }
 
-#pragma mark - init/dealloc methods
+#pragma mark - Lifecycle
 
 - (instancetype)initWithInputData:(id)inputData {
     self = [super init];
@@ -52,15 +52,13 @@ const struct CloudKitCityFields CloudKitCityFields = {
     return self;
 }
 
-#pragma mark - methods
+#pragma mark - Private
 
 - (void)mapObject:(CKRecord *)object {
     _name = [object valueForKeyPath:CloudKitCityFields.name];
     _text = [object valueForKeyPath:CloudKitCityFields.text];
     _image = [UIImage imageWithData:(NSData *)[object valueForKeyPath:CloudKitCityFields.picture]];
     _identifier = object.recordID.recordName;
-//    CKAsset *asset = [object valueForKeyPath:CloudKitCityFields.picture];
-//    _imageURL = [asset.fileURL absoluteString];
 }
 
 @end
