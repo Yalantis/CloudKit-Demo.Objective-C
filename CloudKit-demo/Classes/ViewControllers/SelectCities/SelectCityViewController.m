@@ -30,10 +30,6 @@ UITableViewDelegate
 
 #pragma mark - Lifecycle
 
-- (void)dealloc {
-    NSLog(@"dealloc : %@", NSStringFromClass([self class]));
-}
-
 - (void)viewDidLoad {
     [self.tableView reloadData];
 }
@@ -63,8 +59,8 @@ UITableViewDelegate
     [self.indicatorView startAnimating];
     NSIndexPath *selectedIndexPath = [self.tableView.indexPathsForSelectedRows lastObject];
     __weak typeof(self) weakSelf = self;
-    [CloudKitManager createRecords:self.defaultContent[selectedIndexPath.item]
-                 completionHandler:^(NSArray *results, NSError *error) {
+    [CloudKitManager createRecord:self.defaultContent[selectedIndexPath.item]
+                completionHandler:^(NSArray *results, NSError *error) {
                      
                      [weakSelf.indicatorView stopAnimating];
                      weakSelf.selectedCity = [[City alloc] initWithInputData:[results lastObject]];

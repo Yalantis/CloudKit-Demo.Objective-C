@@ -41,7 +41,7 @@ NSString * const kCitiesRecord = @"Cities";
     }];
 }
 
-+ (void)createRecords:(NSDictionary *)recordDic completionHandler:(CloudKitCompletionHandler)handler {
++ (void)createRecord:(NSDictionary *)recordDic completionHandler:(CloudKitCompletionHandler)handler {
     
     CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord];
 
@@ -64,6 +64,43 @@ NSString * const kCitiesRecord = @"Cities";
             handler (nil, error);
         } else {
             handler (@[record], error);
+        }
+    }];
+}
+
++ (void)updateRecordTextWithId:(NSString *)recordId text:(NSString *)text {
+    
+    CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:recordId];
+    
+    [[self publicCloudDatabase] fetchRecordWithID:recordID completionHandler:^(CKRecord *record, NSError *error) {
+        
+        if(error) {
+            NSLog(@"%@", error);
+        } else {
+            
+            record[CloudKitCityFields.text] = text;
+            
+            [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+                if(error) {
+                    NSLog(@"Uh oh, there was an error updating ... %@", error);
+                } else {
+                    NSLog(@"Updated record successfully");
+                }
+            }];
+        }
+    }];
+    
+    
+    return;
+    
+    CKRecordID *identifier = [[CKRecordID alloc] initWithRecordName:recordId];
+    CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord recordID:identifier];
+    
+    record[CloudKitCityFields.text] = text;
+    
+    [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+        if (error) {
+            
         }
     }];
 }

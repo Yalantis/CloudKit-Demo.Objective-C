@@ -7,6 +7,7 @@
 //
 
 #import "DetailedViewController.h"
+#import "CloudKitManager.h"
 
 @interface DetailedViewController ()
 
@@ -41,6 +42,8 @@
 
 - (IBAction)saveButtonDidPress:(id)sender {
     [self.view endEditing:YES];
+    
+    [CloudKitManager updateRecordTextWithId:self.city.identifier text:[self.descriptionTextView.text copy]];
 }
 
 #pragma mark - Private
