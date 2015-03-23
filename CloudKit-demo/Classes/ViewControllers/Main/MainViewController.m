@@ -23,7 +23,7 @@ UITableViewDelegate
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicatorView;
 
-@property (nonatomic, copy) NSArray *cities;
+@property (nonatomic, strong) NSArray *cities;
 
 @end
 
@@ -40,10 +40,15 @@ UITableViewDelegate
 #pragma mark - Segue methods
 
 - (IBAction)unwindToMainViewController:(UIStoryboardSegue *)segue {
-    
-    SelectCityViewController *selectCityVC = (SelectCityViewController *)[segue sourceViewController];
-    City *newCity = selectCityVC.selectedCity;
-    [self addCity:newCity];
+
+    if ([segue.sourceViewController isMemberOfClass:[SelectCityViewController class]]) {
+        SelectCityViewController *selectCityVC = (SelectCityViewController *)[segue sourceViewController];
+        City *newCity = selectCityVC.selectedCity;
+        [self addCity:newCity];
+    } else if ([segue.sourceViewController isMemberOfClass:[DetailedViewController class]]) {
+        DetailedViewController *detailedVC = (DetailedViewController *)[segue sourceViewController];
+        [self removeCity:detailedVC.city];
+    }
     
     [self.navigationController popToViewController:self animated:YES];
 }
@@ -56,36 +61,49 @@ UITableViewDelegate
 }
 
 - (void)updateData {
-    [self.indicatorView startAnimating];
+    [self shouldAnimateIndicator:YES];
     __weak typeof(self) weakSelf = self;
     [CloudKitManager fetchAllCitiesWithCompletionHandler:^(NSArray *results, NSError *error) {
         __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf.indicatorView stopAnimating];
         if (error) {
             if (error.code == 6) {
-                [strongSelf presentErrorMessage:NSLocalizedString(@"Add Cities from the default list", nil)];
+                [strongSelf presentMessage:NSLocalizedString(@"Add City from the default list", nil)];
             } else {
-                [strongSelf presentErrorMessage:error.userInfo[NSLocalizedDescriptionKey]];
+                [strongSelf presentMessage:error.userInfo[NSLocalizedDescriptionKey]];
             }
         } else {
             strongSelf.cities = results;
             [strongSelf.tableView reloadData];
         }
+        [strongSelf shouldAnimateIndicator:NO];
     }];
 }
 
-- (void)presentErrorMessage:(NSString *)errorMsg {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CloudKit Error", nil)
-                                                    message:errorMsg
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"Ok", nil)
-                                          otherButtonTitles:nil];
-    [alert show];
+- (void)shouldAnimateIndicator:(BOOL)animate {
+    if (animate) {
+        [self.indicatorView startAnimating];
+    } else {
+        [self.indicatorView stopAnimating];
+    }
+    
+    self.tableView.userInteractionEnabled = !animate;
+    self.navigationController.navigationBar.userInteractionEnabled = !animate;
 }
 
 - (void)addCity:(City *)city {
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.cities];
     [temp insertObject:city atIndex:0];
+    self.cities = temp;
+    
+    [self.tableView reloadData];
+}
+
+- (void)removeCity:(City *)city {
+    
+    if (![self.cities containsObject:city]) return;
+    
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.cities];
+    [temp removeObject:city];
     self.cities = temp;
     
     [self.tableView reloadData];

@@ -20,6 +20,7 @@
 		AA5080921ABAE294005F05AC /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = AA50808D1ABAE294005F05AC /* Singapore.png */; };
 		AA59A0AF1ABAE66700FAACB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA59A0AE1ABAE66700FAACB5 /* Images.xcassets */; };
 		AA60520E1AB9FC4300130577 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA60520D1AB9FC4300130577 /* CloudKit.framework */; };
+		AA708B131AC030A6006426EF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA708B121AC030A6006426EF /* BaseViewController.m */; };
 		AACCE7761AB70FAA00B27DEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */; };
 		AACCE7771AB70FAA00B27DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACCE7741AB70FAA00B27DEC /* Main.storyboard */; };
 		AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCE77A1AB70FF600B27DEC /* AppDelegate.m */; };
@@ -61,6 +62,8 @@
 		AA50808D1ABAE294005F05AC /* Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Singapore.png; sourceTree = "<group>"; };
 		AA59A0AE1ABAE66700FAACB5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA60520D1AB9FC4300130577 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AA708B111AC030A6006426EF /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		AA708B121AC030A6006426EF /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AACCE7731AB70FAA00B27DEC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		AACCE7741AB70FAA00B27DEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AACCE7791AB70FF600B27DEC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,6 +191,15 @@
 			path = CitiesImages;
 			sourceTree = "<group>";
 		};
+		AA708B101AC03094006426EF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA708B111AC030A6006426EF /* BaseViewController.h */,
+				AA708B121AC030A6006426EF /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		AACCE76F1AB70F5200B27DEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +245,7 @@
 		AACCE7801AB72A2D00B27DEC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AA708B101AC03094006426EF /* Base */,
 				AA18E3131AB9C8AA00366168 /* Detailed */,
 				AA18E3161AB9C8AA00366168 /* Main */,
 				AA18E3191AB9C8AA00366168 /* SelectCities */,
@@ -373,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACCE78A1AB72D8800B27DEC /* City.m in Sources */,
+				AA708B131AC030A6006426EF /* BaseViewController.m in Sources */,
 				AACCE77D1AB70FF600B27DEC /* AppDelegate.m in Sources */,
 				AACCE78F1AB752B400B27DEC /* CityTableViewCell.m in Sources */,
 				AACCE7861AB72A4F00B27DEC /* CloudKitManager.m in Sources */,

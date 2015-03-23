@@ -31,6 +31,8 @@ UITableViewDelegate
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     [self.tableView reloadData];
 }
 
@@ -54,18 +56,35 @@ UITableViewDelegate
 
 #pragma mark - IBActions
 
-- (IBAction)doneButtonDidPress:(id)sender {
+- (IBAction)saveButtonDidPress:(id)sender {
     
-    [self.indicatorView startAnimating];
+    [self shouldAnimateIndicator:YES];
     NSIndexPath *selectedIndexPath = [self.tableView.indexPathsForSelectedRows lastObject];
     __weak typeof(self) weakSelf = self;
     [CloudKitManager createRecord:self.defaultContent[selectedIndexPath.item]
                 completionHandler:^(NSArray *results, NSError *error) {
-                     
-                     [weakSelf.indicatorView stopAnimating];
-                     weakSelf.selectedCity = [[City alloc] initWithInputData:[results lastObject]];
-                     [weakSelf performSegueWithIdentifier:kUnwindId sender:self];
+                    
+                    if (error) {
+                        [weakSelf presentMessage:error.userInfo[NSLocalizedDescriptionKey]];
+                        [weakSelf shouldAnimateIndicator:NO];
+                    } else {
+                        weakSelf.selectedCity = [[City alloc] initWithInputData:[results lastObject]];
+                        [weakSelf performSegueWithIdentifier:kUnwindId sender:self];
+                    }
     }];
+}
+
+#pragma mark - Private
+
+- (void)shouldAnimateIndicator:(BOOL)animate {
+    if (animate) {
+        [self.indicatorView startAnimating];
+    } else {
+        [self.indicatorView stopAnimating];
+    }
+
+    self.tableView.userInteractionEnabled = !animate;
+    self.navigationController.navigationBar.userInteractionEnabled = !animate;
 }
 
 #pragma mark - UITableViewDataSource

@@ -9,12 +9,15 @@
 #import "DetailedViewController.h"
 #import "CloudKitManager.h"
 
+static NSString * const kUnwindId = @"unwindToMainId";
+
 @interface DetailedViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIImageView *cityImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicatorView;
 
 @end
 
@@ -43,7 +46,35 @@
 - (IBAction)saveButtonDidPress:(id)sender {
     [self.view endEditing:YES];
     
-    [CloudKitManager updateRecordTextWithId:self.city.identifier text:[self.descriptionTextView.text copy]];
+    [self shouldAnimateIndicator:YES];
+    __weak typeof(self) weakSelf = self;
+    [CloudKitManager updateRecordTextWithId:self.city.identifier
+                                       text:[self.descriptionTextView.text copy]
+                          completionHandler:^(NSArray *results, NSError *error) {
+                              
+                              if (error) {
+                                  [weakSelf shouldAnimateIndicator:NO];
+                                  [weakSelf presentMessage:error.userInfo[NSLocalizedDescriptionKey]];
+                              } else {
+                                  [weakSelf presentMessage:NSLocalizedString(@"City has been updated successfully", nil)];
+                                  [weakSelf shouldAnimateIndicator:NO];
+                              }
+    }];
+}
+
+- (IBAction)removeButtonDidPress:(id)sender {
+    
+    [self shouldAnimateIndicator:YES];
+    __weak typeof(self) weakSelf = self;
+    [CloudKitManager removeRecordWithId:self.city.identifier completionHandler:^(NSArray *results, NSError *error) {
+        
+        if (error) {
+            [weakSelf shouldAnimateIndicator:NO];
+            [weakSelf presentMessage:error.userInfo[NSLocalizedDescriptionKey]];
+        } else {
+            [weakSelf performSegueWithIdentifier:kUnwindId sender:self];
+        }
+    }];
 }
 
 #pragma mark - Private
@@ -52,6 +83,17 @@
     self.cityImageView.image = self.city.image;
     self.nameLabel.text = self.city.name;
     self.descriptionTextView.text = self.city.text;
+}
+
+- (void)shouldAnimateIndicator:(BOOL)animate {
+    if (animate) {
+        [self.indicatorView startAnimating];
+    } else {
+        [self.indicatorView stopAnimating];
+    }
+    
+    self.view.userInteractionEnabled = !animate;
+    self.navigationController.navigationBar.userInteractionEnabled = !animate;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {

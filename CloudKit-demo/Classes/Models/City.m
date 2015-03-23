@@ -27,14 +27,14 @@ const struct CloudKitCityFields CloudKitCityFields = {
     NSString *path = [[NSBundle mainBundle] pathForResource:kCitiesPlistName ofType:@"plist"];
     NSData *plistData = [NSData dataWithContentsOfFile:path];
     
-    NSAssert(plistData, @"error reading from file: ");
+    NSAssert(plistData, @"Source doesn't exist");
     
     NSPropertyListFormat format;
     NSError *error = nil;
     NSDictionary *plistDic = [NSPropertyListSerialization propertyListWithData:plistData
-                                                                    options:NSPropertyListMutableContainersAndLeaves
-                                                                     format:&format
-                                                                      error:&error];
+                                                                       options:NSPropertyListMutableContainersAndLeaves
+                                                                        format:&format
+                                                                         error:&error];
     
     NSAssert(!error, @"Can not read data from the plist");
     

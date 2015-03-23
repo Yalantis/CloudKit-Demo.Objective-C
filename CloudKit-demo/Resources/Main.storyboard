@@ -115,9 +115,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Cities" id="fRd-Wl-Apm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DhN-0A-LO8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DhN-0A-LO8">
                             <connections>
-                                <action selector="doneButtonDidPress:" destination="yBg-dl-09i" id="JN0-2j-ujr"/>
+                                <action selector="saveButtonDidPress:" destination="yBg-dl-09i" id="6Yo-Yv-n81"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -145,7 +145,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chb-MG-UYb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="chb-MG-UYb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ux8-HU-HW7" userLabel="ContainerView">
@@ -182,13 +182,39 @@
                                                     </mask>
                                                 </variation>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuF-gR-RfZ">
+                                                <rect key="frame" x="8" y="283" width="80" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="dHB-RG-8y4"/>
+                                                    <constraint firstAttribute="width" constant="80" id="upM-Y1-a6O"/>
+                                                </constraints>
+                                                <state key="normal" title="Revome">
+                                                    <color key="titleColor" red="0.28235294119999998" green="0.62745098040000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removeButtonDidPress:" destination="hh9-3J-7OK" eventType="touchUpInside" id="Cnw-pB-yKb"/>
+                                                </connections>
+                                            </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-cM-83k">
+                                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="37" id="fKI-KQ-Gal"/>
+                                                    <constraint firstAttribute="height" constant="37" id="tDH-nE-nu5"/>
+                                                </constraints>
+                                                <color key="color" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="DpT-xg-5DK" firstAttribute="leading" secondItem="ux8-HU-HW7" secondAttribute="leading" constant="16" id="3fb-KX-Ra7"/>
+                                            <constraint firstItem="PuF-gR-RfZ" firstAttribute="leading" secondItem="ux8-HU-HW7" secondAttribute="leading" constant="8" id="CBQ-3h-2Sk"/>
                                             <constraint firstItem="Dga-yM-kt1" firstAttribute="top" secondItem="bQ8-r6-w0z" secondAttribute="bottom" constant="8" id="Cdg-BF-JMG"/>
                                             <constraint firstAttribute="trailing" secondItem="DpT-xg-5DK" secondAttribute="trailing" constant="16" id="Ee4-ZC-RQQ"/>
                                             <constraint firstAttribute="trailing" secondItem="bQ8-r6-w0z" secondAttribute="trailing" id="HZL-CT-6ax"/>
+                                            <constraint firstAttribute="centerY" secondItem="Npz-cM-83k" secondAttribute="centerY" id="Ocx-EZ-vKZ"/>
+                                            <constraint firstAttribute="centerX" secondItem="Npz-cM-83k" secondAttribute="centerX" id="ShD-Xb-YaH"/>
+                                            <constraint firstItem="PuF-gR-RfZ" firstAttribute="centerY" secondItem="Dga-yM-kt1" secondAttribute="centerY" id="WQr-ga-gkz"/>
                                             <constraint firstAttribute="bottom" secondItem="DpT-xg-5DK" secondAttribute="bottom" constant="20" id="bAl-hC-cP9"/>
                                             <constraint firstItem="bQ8-r6-w0z" firstAttribute="leading" secondItem="ux8-HU-HW7" secondAttribute="leading" id="hFI-Yp-Rzh"/>
                                             <constraint firstAttribute="trailing" secondItem="Dga-yM-kt1" secondAttribute="trailing" constant="16" id="p4Z-cV-F0G"/>
@@ -233,13 +259,16 @@
                     <connections>
                         <outlet property="cityImageView" destination="bQ8-r6-w0z" id="YfX-Ht-szi"/>
                         <outlet property="descriptionTextView" destination="DpT-xg-5DK" id="Yw2-k6-iRk"/>
+                        <outlet property="indicatorView" destination="Npz-cM-83k" id="Mfa-T2-q4r"/>
                         <outlet property="nameLabel" destination="Dga-yM-kt1" id="Io0-LX-mNI"/>
                         <outlet property="scrollView" destination="chb-MG-UYb" id="Fyb-6M-cey"/>
+                        <segue destination="qeQ-d3-UmU" kind="unwind" identifier="unwindToMainId" unwindAction="unwindToMainViewController:" id="0hP-gm-gNx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K38-M3-Hpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qeQ-d3-UmU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="142"/>
+            <point key="canvasLocation" x="1475" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hWB-kL-8LA">

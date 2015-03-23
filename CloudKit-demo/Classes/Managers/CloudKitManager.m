@@ -8,18 +8,15 @@
 
 #import "CloudKitManager.h"
 #import <CloudKit/CloudKit.h>
-#import "City.h"
 #import <UIKit/UIKit.h>
+#import "City.h"
 
-NSString * const kContainerId = @"iCloud.com.yalantis.cloudkit-demo";
 NSString * const kCitiesRecord = @"Cities";
 
 @implementation CloudKitManager
 
-#pragma mark - Class methods
-
 + (CKDatabase *)publicCloudDatabase {
-    return [[CKContainer containerWithIdentifier:kContainerId] publicCloudDatabase];
+    return [[CKContainer defaultContainer] publicCloudDatabase];
 }
 
 + (void)fetchAllCitiesWithCompletionHandler:(CloudKitCompletionHandler)handler {
@@ -68,40 +65,33 @@ NSString * const kCitiesRecord = @"Cities";
     }];
 }
 
-+ (void)updateRecordTextWithId:(NSString *)recordId text:(NSString *)text {
++ (void)updateRecordTextWithId:(NSString *)recordId text:(NSString *)text completionHandler:(CloudKitCompletionHandler)handler {
     
     CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:recordId];
-    
     [[self publicCloudDatabase] fetchRecordWithID:recordID completionHandler:^(CKRecord *record, NSError *error) {
         
-        if(error) {
-            NSLog(@"%@", error);
-        } else {
-            
-            record[CloudKitCityFields.text] = text;
-            
-            [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
-                if(error) {
-                    NSLog(@"Uh oh, there was an error updating ... %@", error);
-                } else {
-                    NSLog(@"Updated record successfully");
-                }
-            }];
-        }
-    }];
-    
-    
-    return;
-    
-    CKRecordID *identifier = [[CKRecordID alloc] initWithRecordName:recordId];
-    CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord recordID:identifier];
-    
-    record[CloudKitCityFields.text] = text;
-    
-    [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+        if (!handler) return;
+        
         if (error) {
-            
+            handler (@[record], error);
+            return;
         }
+        
+        record[CloudKitCityFields.text] = text;
+        [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
+            handler (@[record], error);
+        }];
+    }];
+}
+
++ (void)removeRecordWithId:(NSString *)recordId completionHandler:(CloudKitCompletionHandler)handler {
+    
+    CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:recordId];
+    [[self publicCloudDatabase] deleteRecordWithID:recordID completionHandler:^(CKRecordID *recordID, NSError *error) {
+        
+        if (!handler) return;
+        
+        handler (nil, error);
     }];
 }
 

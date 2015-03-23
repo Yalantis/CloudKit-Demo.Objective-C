@@ -29,17 +29,17 @@ static NSString * const kCityCellReuseId = @"CityTableViewCellReuseId";
     return NSStringFromClass([self class]);
 }
 
-#pragma mark - Lifecycle
-
-- (void)awakeFromNib {
-    
-}
-
 #pragma mark - Public
 
 - (void)setCity:(City *)city {
     self.nameLable.text = city.name;
+    self.pictureImageView.alpha = 0.f;
     self.pictureImageView.image = city.image;
+    
+    [UIView animateWithDuration:.3 animations:^{
+        self.pictureImageView.alpha = 1.f;
+    }];
+    
 }
 
 @end
