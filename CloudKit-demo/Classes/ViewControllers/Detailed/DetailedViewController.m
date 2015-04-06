@@ -33,11 +33,6 @@ static NSString * const kUnwindId = @"unwindToMainId";
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
     [self setupView];
 }
 
@@ -45,6 +40,7 @@ static NSString * const kUnwindId = @"unwindToMainId";
 
 - (IBAction)saveButtonDidPress:(id)sender {
     [self.view endEditing:YES];
+    self.scrollView.contentOffset = CGPointZero;
     
     [self shouldAnimateIndicator:YES];
     __weak typeof(self) weakSelf = self;
@@ -97,13 +93,14 @@ static NSString * const kUnwindId = @"unwindToMainId";
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    self.scrollView.contentOffset = CGPointMake(0, 110.f);
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    [UIView animateWithDuration:.25 animations:^{
-        self.scrollView.contentOffset = CGPointZero;
-    }];
+    
+    NSDictionary *info  = notification.userInfo;
+    NSValue *value = info[UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect rawFrame      = [value CGRectValue];
+    CGRect keyboardFrame = [self.view convertRect:rawFrame fromView:nil];
+    
+    self.scrollView.contentOffset = CGPointMake(0, keyboardFrame.size.height);
 }
 
 @end

@@ -67,7 +67,7 @@ UITableViewDelegate
         __strong typeof(self) strongSelf = weakSelf;
         if (error) {
             if (error.code == 6) {
-                [strongSelf presentMessage:NSLocalizedString(@"Add City from the default list", nil)];
+                [strongSelf presentMessage:NSLocalizedString(@"Add City from the default list. Database is empty", nil)];
             } else {
                 [strongSelf presentMessage:error.userInfo[NSLocalizedDescriptionKey]];
             }
@@ -85,7 +85,7 @@ UITableViewDelegate
     } else {
         [self.indicatorView stopAnimating];
     }
-    
+
     self.tableView.userInteractionEnabled = !animate;
     self.navigationController.navigationBar.userInteractionEnabled = !animate;
 }
@@ -94,7 +94,6 @@ UITableViewDelegate
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.cities];
     [temp insertObject:city atIndex:0];
     self.cities = temp;
-    
     [self.tableView reloadData];
 }
 
@@ -105,7 +104,6 @@ UITableViewDelegate
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.cities];
     [temp removeObject:city];
     self.cities = temp;
-    
     [self.tableView reloadData];
 }
 

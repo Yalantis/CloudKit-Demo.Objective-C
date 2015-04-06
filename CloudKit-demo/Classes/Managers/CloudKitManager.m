@@ -19,6 +19,7 @@ NSString * const kCitiesRecord = @"Cities";
     return [[CKContainer defaultContainer] publicCloudDatabase];
 }
 
+// Retrieve existing records
 + (void)fetchAllCitiesWithCompletionHandler:(CloudKitCompletionHandler)handler {
     
     NSPredicate *predicate = [NSPredicate predicateWithValue:YES];
@@ -30,14 +31,13 @@ NSString * const kCitiesRecord = @"Cities";
         
                                if (!handler) return;
                                
-                               if (error) {
-                                   handler (nil, error);
-                               } else {
+                               dispatch_async(dispatch_get_main_queue(), ^{
                                    handler ([self mapCities:results], error);
-                               }
+                               });
     }];
 }
 
+// add a new record
 + (void)createRecord:(NSDictionary *)recordDic completionHandler:(CloudKitCompletionHandler)handler {
     
     CKRecord *record = [[CKRecord alloc] initWithRecordType:kCitiesRecord];
@@ -57,33 +57,36 @@ NSString * const kCitiesRecord = @"Cities";
         
         if (!handler) return;
         
-        if(error) {
-            handler (nil, error);
-        } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
             handler (@[record], error);
-        }
+        });
     }];
 }
 
+// updating the record by recordId
 + (void)updateRecordTextWithId:(NSString *)recordId text:(NSString *)text completionHandler:(CloudKitCompletionHandler)handler {
-    
     CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:recordId];
     [[self publicCloudDatabase] fetchRecordWithID:recordID completionHandler:^(CKRecord *record, NSError *error) {
         
         if (!handler) return;
         
         if (error) {
-            handler (@[record], error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                handler (nil, error);
+            });
             return;
         }
         
         record[CloudKitCityFields.text] = text;
         [[self publicCloudDatabase] saveRecord:record completionHandler:^(CKRecord *record, NSError *error) {
-            handler (@[record], error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                handler (@[record], error);
+            });
         }];
     }];
 }
 
+// remove the record
 + (void)removeRecordWithId:(NSString *)recordId completionHandler:(CloudKitCompletionHandler)handler {
     
     CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:recordId];
@@ -91,11 +94,15 @@ NSString * const kCitiesRecord = @"Cities";
         
         if (!handler) return;
         
-        handler (nil, error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            handler (nil, error);
+        });
     }];
 }
 
 + (NSArray *)mapCities:(NSArray *)cities {
+    if (cities.count == 0) return nil;
+    
     NSMutableArray *temp = [[NSMutableArray alloc] init];
     [cities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         City *city = [[City alloc] initWithInputData:obj];

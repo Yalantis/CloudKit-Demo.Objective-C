@@ -23,7 +23,7 @@
                             <constraint firstAttribute="height" constant="24" id="Cqx-nF-fE3"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -47,7 +47,7 @@
                 <outlet property="nameLable" destination="Lma-JR-T7j" id="wnc-PV-hKr"/>
                 <outlet property="pictureImageView" destination="pfn-ur-Hyr" id="45T-G9-kPx"/>
             </connections>
-            <point key="canvasLocation" x="17" y="268"/>
+            <point key="canvasLocation" x="-189" y="266"/>
         </tableViewCell>
     </objects>
 </document>
