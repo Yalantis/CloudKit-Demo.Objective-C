@@ -1,4 +1,4 @@
-# CloudKit Demo. Objective - C
+
 <p align="center" >
   <img src="https://github.com/Yalantis/CloudKit-Demo.Objective-C/blob/master/CloudKit-objc.png" alt="CloudKit" title="CloudKit">
 </p>
