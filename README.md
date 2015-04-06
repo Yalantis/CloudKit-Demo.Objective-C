@@ -1,11 +1,11 @@
 # CloudKit Demo. Objective - C
 <p align="center" >
-  <img src="http://wpuploads.appadvice.com/wp-content/uploads/2014/07/CloudKit-642x481.png" alt="CloudKit" title="CloudKit">
+  <img src="https://github.com/Yalantis/CloudKit-Demo.Objective-C/blob/master/CloudKit-objc.png" alt="CloudKit" title="CloudKit">
 </p>
 
 CloudKit, Apple’s remote data storage service, provides a possibility to store app data using users’ iCloud accounts as a back-end storage service.
 
-Here is the same demo on [Swift](http://yalantis.com).
+Here is the same demo on [Swift](https://github.com/Yalantis/CloudKit-Demo.Swift).
 
 ## Requirements
 iOS 8.0
