@@ -13,8 +13,8 @@ iOS 8.0
 ## How To Get Started
 
 - Set up Cloud/CloudKit at iOS Developer Portal.
-- Insert bundle identifier and choose a corresponding Team.
-- Select the Capabilities tab in the target editor, and then switch ON the iCloud.
+- Insert a bundle identifier and choose a corresponding Team.
+- Select Capabilities tab in the target editor, and then switch ON the iCloud.
 
 For more detailed information take a look at [our article](http://yalantis.com/blog/work-cloudkit/).
 
@@ -40,7 +40,7 @@ record[@"key"] = @"Some data";
 }];
 ```
 
-### Updating the record
+### Update the record
 ```objective-c
 CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:@"recordId"];
 [[CKContainer defaultContainer].publicCloudDatabase fetchRecordWithID:recordID completionHandler:^(CKRecord *record, NSError *error) {
@@ -67,7 +67,7 @@ CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:@"recordId"];
 
 [Yalantis](http://yalantis.com)
 
-Follow Yalantis on Twitter ([@Yalantis](https://twitter.com/yalantis))
+Follow Yalantis on Twitter ([@Yalantis](https://twitter.com/yalantis)) and [Facebook] (https://www.facebook.com/Yalantis?ref=ts&fref=ts)
 
 ## License
 
